@@ -7,7 +7,9 @@ Bacterial metabolite profiles may contain features that are specific to particul
 Wei Chen, et al., Universal, untargeted detection of bacteria in human tissues using spatial metabolomics, Preprint
 
 ## Data
-The raw data referenced in the publication above is available in MetaboLights [2], [MTLBS10328](https://www.ebi.ac.uk/metabolights/MTBLS415).
+The raw data referenced in the publication above is available in MetaboLights [2], [MTLBS10328](https://www.ebi.ac.uk/metabolights/MTBLS415). This repository contains a subset of the pre-processed data, sufficient to run the example code provided.
+
+The example data contains a `[597 x 17]` matrix of 17 variable intensities, as well as a `[17 x 1]` vector of m/z values. The phylogeny of the 597 observations is provided as a `{597 x 7}` table, with the 7 taxonomic ranks being Gram, Phylum, Class, Order, Family, Genus and Species. Other taxonomic ranks can be included, but it is necessary that taxonomy is provided from the least to the most specific, i.e. least specific in the first column. The `VariableNames` property of the table contains the taxonomic ranks.
 
 ## Code
 The code and example data in this repository explains the process of determining taxon specific markers (TSMs), i.e. assessing the specificity of a variable at each taxonomic rank. The `@TSM` class contains various methods which are each described below. The output from the class is a determination as to whether a variable is specific and at what rank.
@@ -16,17 +18,12 @@ The code and example data in this repository explains the process of determining
 A subset of data can be found in `data/Example_TSM.mat`, and a workflow is presented in `Workflow.m`
 
 ### Class `@TSM`
-This class contains all of the methods required to determine if a single variable is specific for a particular member of any taxonomic rank. The required inputs are the variable intensities arranged as a `[n x 1]` vector, a table corresponding to the observations' phylogeny, along with the variable name and a significance level. The phylogenetic table should be sized `{n x p}` with `p` taxonomic ranks, set as the table's variable names. All methods are calculated automatically using the `TSM.runall` method (individual methods explained further below). Once completed, the `TSM.checkSpecificity` method applies thresholds to determine if a variable is suitably specific; for each variable the relevant results are saved in the `TSM.difftab` property.
+`TSM(variableName,variableIntensities,phylogeny,alpha);`
+This class contains all of the methods required to determine if a single variable is specific for a particular member of any taxonomic rank. The required inputs are the `variableIntensities` arranged as a `[n x 1]` vector, a table corresponding to the observations' `phylogeny`, along with the `variableName` and the significance level, `alpha`. The phylogenetic table should be sized `{n x p}` with `p` taxonomic ranks, set as the table's variable names. All methods are calculated automatically using the `TSM.runall` method (individual methods explained further below). Once completed, the `TSM.checkSpecificity` method applies thresholds to determine if a variable is suitably specific; the relevant results are saved in the `TSM.difftab` property.
 
 ```MATLAB
 # Load the required data
-
-# Define TSM thresholds
-alpha = 0.05;
-tpr = 0.80;
-fpr = 0.05;
-numDiffs = [0 0 0 0 2 2 2];
-minObs = 3;
+load('data/Example_TSM.mat');
 
 # Create object
 t = TSM(name,x,y,alpha);
@@ -99,5 +96,5 @@ Required toolboxes are:
 - Statistics and machine learning
 
 ## References
-1. Wei Chen et al.
+1. Wei Chen et al. Universal, untargeted detection of bacteria in human tissues using spatial metabolomics. Preprint. 2024
 2. Yurekten O, Payne T, Tejera N, et al. MetaboLights: open data repository for metabolomics. Nucleic Acids Research. 2024 Jan;52(D1):D640-D646. DOI: 10.1093/nar/gkad1045. PMID: 37971328; PMCID: PMC10767962.
