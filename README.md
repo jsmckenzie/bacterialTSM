@@ -62,11 +62,11 @@ Class methods are as follow:
 `TSM.checkSpecificity(tpr,fpr,numDiff,minObs);`
 The calculations thus far determine the most likely candidate at each taxonomic rank, but arbitrary thresholds are used to filter the list to include only the most specific/sensitive. Each of the parameters is described below.
 
-| Parameter | Default | Description |
+| Parameter | Example | Description |
 | :-        | :-      | :-          |
 | `tpr` | `0.80` | The minimum true positive rate, determined from the ROC curve. |
 | `fpr` | `0.10` | The maximum false positive rate, determined from the ROC curve. |
-| `numDiff` | `[0 0 0 0 2 2 2]` | Number of differences, expressed as the MaxGroups-n for each taxonomic rank. A variable can be considered specific if it different to all of the other n-1 groups at that taxon. To allow some leeway at lower taxons, the corresponding value of numDiff can be increased from 0. In this example, variables should be different to `[MaxGroups-1 - 0]` for gram, phylum, class, order variables but `[MaxGroups-1 - 2]` for family, genus and species levels. Thus for species level, this is Differences >=230 (max 233) and for class level this is Differences >= 10 (max 11). The exceptions are increased for lower taxonomic ranks for situations where the lower number of observations makes it harder to differentiate between higher intensity groups that are significantly different. |
+| `numDiff` | `[0 0 0 0 2 2 2]` | Number of differences, expressed as the MaxGroups-n for each of the `p` taxonomic ranks. A variable can be considered specific if it different to all of the other n-1 groups at that taxon. To allow some leeway at lower taxons, the corresponding value of numDiff can be increased from 0. In this example, variables should be different to `[MaxGroups-1 - 0]` for gram, phylum, class, order variables but `[MaxGroups-1 - 2]` for family, genus and species levels. Thus for species level, this is Differences >=230 (max 233) and for class level this is Differences >= 10 (max 11). The exceptions are increased for lower taxonomic ranks for situations where the lower number of observations makes it harder to differentiate between higher intensity groups that are significantly different. |
 | `minObs` | `3` | The minimum number of observations; a group must have this many observations to be considered a taxon specific marker. |
 
 #### Summary
