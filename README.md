@@ -1,7 +1,10 @@
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Linnaeus1758-title-page.jpg" alt="Title page of the 1758 edition of Linnaeus's Systema Naturæ" height="300" align="right" caption="Systema Naturæ, from Wikipedia">
 
 # bacterialTSM 🧫
 Bacterial metabolite profiles may contain features that are specific to particular taxonomic ranks. In Wei Chen et al., _Universal, untargeted detection of bacteria in human tissues using spatial metabolomics_, we demonstrate that ~350 markers can be identified from a set of ~600 individual isolates, and validated across various independent datasets. We propose that these taxon specific markers (TSMs) may be a suitable means of identification of the presence of certain taxons within clinical samples.
+
+<img src="img/Species-mz-734_546-Clostridium difficile.png" alt="Title page of the 1758 edition of Linnaeus's Systema Naturæ" align="center" caption="Systema Naturæ, from Wikipedia">
+
+>The figure above shows, on the left hand side, the intensities of m/z 734.546 divided into the 7 phylogenetic levels, and coloured according to the group in each which is most different to all others. The ROC curves for each rank are shown in the right-hand axes, with species obtaining a TPR of 0.8 and a FPR of 0. In conjunction, the plots demonstrate that this variable is highly specific to C. difficile.
 
 ## Publication
 Wei Chen, et al., Universal, untargeted detection of bacteria in human tissues using spatial metabolomics, Preprint
