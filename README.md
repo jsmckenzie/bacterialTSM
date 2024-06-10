@@ -9,6 +9,8 @@ Wei Chen, et al., Universal, untargeted detection of bacteria in human tissues u
 ## Data
 The raw data referenced in the publication above is available in MetaboLights [2], [MTLBS10328](https://www.ebi.ac.uk/metabolights/MTBLS415). This repository contains a subset of the pre-processed data, sufficient to run the example code provided.
 
+The example data contains a `[597 x 17]` matrix of 17 variable intensities, as well as a `[17 x 1]` vector of m/z values. The phylogeny of the 597 observations is provided as a `{597 x 7}` table, with the 7 taxonomic ranks being Gram, Phylum, Class, Order, Family, Genus and Species. Other taxonomic ranks can be included, but it is necessary that taxonomy is provided from the least to the most specific, i.e. least specific in the first column. The `VariableNames` property of the table contains the taxonomic ranks.
+
 ## Code
 The code and example data in this repository explains the process of determining taxon specific markers (TSMs), i.e. assessing the specificity of a variable at each taxonomic rank. The `@TSM` class contains various methods which are each described below. The output from the class is a determination as to whether a variable is specific and at what rank.
 
