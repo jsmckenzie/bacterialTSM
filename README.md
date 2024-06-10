@@ -1,7 +1,7 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Linnaeus1758-title-page.jpg" alt="Title page of the 1758 edition of Linnaeus's Systema Naturæ" height="300" align="right" caption="Systema Naturæ, from Wikipedia">
 
 # bacterialTSM 🧫
-> Succinct summary here
+Bacterial metabolite profiles may contain features that are specific to particular taxonomic ranks. In Wei Chen et al., _Universal, untargeted detection of bacteria in human tissues using spatial metabolomics_, we demonstrate that ~350 markers can be identified from a set of ~600 individual isolates, and validated across various independent datasets. We propose that these taxon specific markers (TSMs) may be a suitable means of identification of the presence of certain taxons within clinical samples.
 
 ## Publication
 Wei Chen, et al., Universal, untargeted detection of bacteria in human tissues using spatial metabolomics, Preprint
@@ -18,7 +18,7 @@ A subset of data can be found in `data/Example.mat`, and a workflow is presented
 ### Class `@TSM`
 This class contains all of the methods required to determine if a single variable is specific for a particular member of any taxonomic rank. The required inputs are the variable intensities arranged as a `[n x 1]` vector, a table corresponding to the observations' phylogeny, along with the variable name and a significance level. The phylogenetic table should be sized `{n x p}` with `p` taxonomic ranks, set as the table's variable names. All methods are calculated automatically using the `TSM.runall` method (individual methods explained further below). Once completed, the `TSM.checkSpecificity` method applies thresholds to determine if a variable is suitably specific; for each variable the relevant results are saved in the `TSM.difftab` property.
 
-```
+```MATLAB
 # Load the required data
 
 # Define TSM thresholds
