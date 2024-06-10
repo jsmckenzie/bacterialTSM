@@ -13,7 +13,7 @@ The raw data referenced in the publication above is available in MetaboLights [2
 The code and example data in this repository explains the process of determining taxon specific markers (TSMs), i.e. assessing the specificity of a variable at each taxonomic rank. The `@TSM` class contains various methods which are each described below. The output from the class is a determination as to whether a variable is specific and at what rank.
 
 ### Usage
-A subset of data can be found in `data/Example.mat`, and a workflow is presented in `Workflow.m`
+A subset of data can be found in `data/Example_TSM.mat`, and a workflow is presented in `Workflow.m`
 
 ### Class `@TSM`
 This class contains all of the methods required to determine if a single variable is specific for a particular member of any taxonomic rank. The required inputs are the variable intensities arranged as a `[n x 1]` vector, a table corresponding to the observations' phylogeny, along with the variable name and a significance level. The phylogenetic table should be sized `{n x p}` with `p` taxonomic ranks, set as the table's variable names. All methods are calculated automatically using the `TSM.runall` method (individual methods explained further below). Once completed, the `TSM.checkSpecificity` method applies thresholds to determine if a variable is suitably specific; for each variable the relevant results are saved in the `TSM.difftab` property.
