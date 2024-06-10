@@ -16,7 +16,8 @@ The code and example data in this repository explains the process of determining
 A subset of data can be found in `data/Example.mat`, and a workflow is presented in `Workflow.m`
 
 ### Class `@TSM`
-Class overview here.
+This class contains all of the methods required to determine if a single variable is specific for a particular member of any taxonomic rank. The required inputs are the variable intensities arranged as a `[n x 1]` vector, a table corresponding to the observations' phylogeny, along with the variable name and a significance level. The phylogenetic table should be sized `{n x p}` with `p` taxonomic ranks, set as the table's variable names. All methods are calculated automatically using the `TSM.runall` method (individual methods explained further below). Once completed, the `TSM.checkSpecificity` method applies thresholds to determine if a variable is suitably specific; for each variable the relevant results are saved in the `TSM.difftab` property.
+
 ```
 # Load the required data
 
@@ -81,18 +82,15 @@ The `TSM` class and its methods help to determine if a single variable can be co
 | 849.73 | Phylum | Bacteroidetes | 50 | 2 | 4 | 0.95637 | 0.0092593 | 0.84 | 5.6995e-80 | 
 | 840.77 | Class | Bacteroidetes | 40 | 1 | 10 | 0.98743 | 0 | 0.975 | 4.7287e-57 |
 | 852.74 | Class | Negativicutes | 7 | 2 | 10 | 0.92539 | 0 | 0.85714 | 4.4933e-96 |
-|608.4|Order|Vibrionales | 3 | 6 | 22 | 1 | 0 | 1 | 1.7298e-185 |
-|648.56|Order|Rhodospirillales | 7 | 2 | 22 | 0.92122 | 0.0068611 | 0.85714    | 3.0087e-42 |
-|572.48|'Family|'Bacteroidaceae |25 | 3 | 45 | 0.98556 | 0.023009 | 0.88 | 2.3762e-90 |
-|649.5|Family|Bacteroidaceae | 25 | 3 | 46 | 0.9635 | 0.017699 | 0.88 | 1.27e-115 |
-|560.42|Genus|Veillonella | 4  | 1 | 79 | 0.99744 | 0.003413 | 1 | 5.2356e-19 |
-|381.34|Species|Corynebacterium striatum | 3 | 5 | 230 | 0.9983 | 0.0017036 | 1 | 1.518e-46 |
-|603.26|Species|Delftia acidovorans | 4 | 1 | 230 | 0.99616 | 0.0051195| 1 | 2.6342e-17 |
-|733.54|Species|Clostridium difficile | 5 | 9  | 232 | 1 | 0 | 1  | 1.0628e-93 |
-|734.55|Species|Clostridium difficile | 5 | 9 | 232 | 1 | 0 | 1 | 1.4195e-118 |
-
-
-
+| 608.40 | Order | Vibrionales | 3 | 6 | 22 | 1 | 0 | 1 | 1.7298e-185 |
+| 648.56 | Order | Rhodospirillales | 7 | 2 | 22 | 0.92122 | 0.0068611 | 0.85714    | 3.0087e-42 |
+| 572.48 | Family | Bacteroidaceae |25 | 3 | 45 | 0.98556 | 0.023009 | 0.88 | 2.3762e-90 |
+| 649.50 | Family | Bacteroidaceae | 25 | 3 | 46 | 0.9635 | 0.017699 | 0.88 | 1.27e-115 |
+| 560.42 | Genus | Veillonella | 4  | 1 | 79 | 0.99744 | 0.003413 | 1 | 5.2356e-19 |
+| 381.34 | Species | Corynebacterium striatum | 3 | 5 | 230 | 0.9983 | 0.0017036 | 1 | 1.518e-46 |
+| 603.26 | Species | Delftia acidovorans | 4 | 1 | 230 | 0.99616 | 0.0051195| 1 | 2.6342e-17 |
+| 733.54 | Species | Clostridium difficile | 5 | 9  | 232 | 1 | 0 | 1  | 1.0628e-93 |
+| 734.55 | Species | Clostridium difficile | 5 | 9 | 232 | 1 | 0 | 1 | 1.4195e-118 |
 
 
 ### Dependencies
