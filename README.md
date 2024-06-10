@@ -7,7 +7,7 @@ Bacterial metabolite profiles may contain features that are specific to particul
 Wei Chen, et al., Universal, untargeted detection of bacteria in human tissues using spatial metabolomics, Preprint
 
 ## Data
-The raw data referenced in the publication above is available in MetaboLights [2], [MTLBS10328](https://www.ebi.ac.uk/metabolights/MTBLS415).
+The raw data referenced in the publication above is available in MetaboLights [2], [MTLBS10328](https://www.ebi.ac.uk/metabolights/MTBLS415). This repository contains a subset of the pre-processed data, sufficient to run the example code provided.
 
 ## Code
 The code and example data in this repository explains the process of determining taxon specific markers (TSMs), i.e. assessing the specificity of a variable at each taxonomic rank. The `@TSM` class contains various methods which are each described below. The output from the class is a determination as to whether a variable is specific and at what rank.
@@ -99,5 +99,5 @@ Required toolboxes are:
 - Statistics and machine learning
 
 ## References
-1. Wei Chen et al.
+1. Wei Chen et al. Universal, untargeted detection of bacteria in human tissues using spatial metabolomics. Preprint. 2024
 2. Yurekten O, Payne T, Tejera N, et al. MetaboLights: open data repository for metabolomics. Nucleic Acids Research. 2024 Jan;52(D1):D640-D646. DOI: 10.1093/nar/gkad1045. PMID: 37971328; PMCID: PMC10767962.
