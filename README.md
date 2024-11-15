@@ -1,5 +1,8 @@
 
 # bacterialTSM 🧫
+
+[![DOI](https://zenodo.org/badge/811782159.svg)](https://doi.org/10.5281/zenodo.14169354)
+
 Bacterial metabolite profiles may contain features that are specific to particular taxonomic ranks. In Wei Chen et al., _Universal, untargeted detection of bacteria in human tissues using spatial metabolomics_, we demonstrate that ~350 markers can be identified from a set of ~600 individual isolates, and validated across various independent datasets. We propose that these taxon specific markers (TSMs) may be a suitable means of identification of the presence of certain taxons within clinical samples.
 
 <img src="img/Species-mz-734_546-Clostridium difficile.png" alt="Title page of the 1758 edition of Linnaeus's Systema Naturæ" align="center" caption="Systema Naturæ, from Wikipedia">
